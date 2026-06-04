@@ -39,8 +39,10 @@ The simulation runs four isolated sweep segments to extract key mathematical par
 
 *Note: Visual outputs exported directly from Silvaco TonyPlot.*
 
-### Linear & Saturation Transfer Curves ($I_d$ vs $V_{gs}$)
-![Id-Vgs Transfer Curves](plots/id_vgs_linear.png)
+### Transfer Characteristics ($I_d$ vs $V_{gs}$)
+| Linear Region ($V_{ds} = 0.05\text{V}$) | Saturation Region ($V_{ds} = 2.0\text{V}$) | Log Scale (Subthreshold) |
+| :---: | :---: | :---: |
+| ![Id-Vgs Linear](plots/idvgs_lin.png) | ![Id-Vgs Saturation](plots/idvgs_sat.png) | ![Id-Vgs Log](plots/idvgs.png) |
 
 ### Output Characteristics ($I_d$ vs $V_{ds}$)
 ![Id-Vds Curves](plots/idvds.png)
