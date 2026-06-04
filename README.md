@@ -14,7 +14,7 @@ Based on the DeckBuild mesh and region geometry, the simulated NMOS physical spe
 
 ## 📊 Automated SPICE Parameter Extraction Results
 
-The simulation runs four isolated sweep segments to extract key mathematical parameters used in SPICE models:
+The simulation executes targeted sweeps to extract key mathematical parameters used in SPICE models:
 
 ### 1. Linear Region Parameters ($V_{ds} = 0.05\text{ V}$)
 * **`Vt_lin`**: Linear Threshold Voltage extracted via the maximum slope intercept method, adjusted for $V_{ds}/2$.
@@ -25,13 +25,13 @@ The simulation runs four isolated sweep segments to extract key mathematical par
 * **`Vt_sat`**: Saturation Threshold Voltage extracted via the $V_{gs}$ vs $\sqrt{I_d}$ intercept method.
 * **`gm_max_sat`**: Peak transconductance under strong saturation conditions.
 
-### 3. Channel & Output Parameters ($V_{gs}$ steps from $1.0\text{ V}$ to $2.5\text{ V}$)
-* **`ro`**: Output Channel Resistance ($r_o = \frac{\partial V_{ds}}{\partial I_d}$).
-* **`lambda` ($\lambda$):** Channel Length Modulation parameter ($\lambda = \frac{1}{r_o \cdot I_{d,sat}}$).
+### 3. Channel & Output Parameters (Extracted at $V_{gs} = 2.5\text{ V}$)
+* **`ro`**: Output Channel Resistance ($r_o = \frac{\partial V_{ds}}{\partial I_d}$) evaluated at peak bias conditions.
+* **`lambda` ($\lambda$):** Channel Length Modulation parameter ($\lambda = \frac{1}{r_o \cdot I_{d,sat}}$) extracted from the maximum $I_d\text{-}V_{ds}$ swing.
 
 ### 4. Substrate Body Effect Parameters
 * **`Vt_bs0`**: Base Threshold voltage at zero body bias ($V_{bs} = 0\text{ V}$).
-* **`gamma_calc` ($\gamma$):** Body effect parameter calculated using substrate parameters and gate oxide capacitance ($C_{ox} = 3.45\text{ fF/}\mu\text{m}^2$).
+* **`gamma_calc` ($\gamma$):** Body effect parameter calculated analytically using substrate parameters and gate oxide capacitance ($C_{ox} = 3.45\text{ fF/}\mu\text{m}^2$).
 
 ---
 
@@ -40,7 +40,7 @@ The simulation runs four isolated sweep segments to extract key mathematical par
 *Note: Visual outputs exported directly from Silvaco TonyPlot.*
 
 ### Transfer Characteristics ($I_d$ vs $V_{gs}$)
-| Linear Region ($V_{ds} = 0.05\text{V}$) | Saturation Region ($V_{ds} = 2.0\text{V}$) | Log Scale (Subthreshold) |
+| Normal / Linear Scale | Saturation Region ($V_{ds} = 2.0\text{V}$) | Log Scale (Subthreshold) |
 | :---: | :---: | :---: |
 | ![Id-Vgs Linear](plots/idvgs_lin.png) | ![Id-Vgs Saturation](plots/idvgs_sat.png) | ![Id-Vgs Log](plots/idvgs.png) |
 
