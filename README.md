@@ -43,10 +43,10 @@ The simulation runs four isolated sweep segments to extract key mathematical par
 ![Id-Vgs Transfer Curves](plots/id_vgs_linear.png)
 
 ### Output Characteristics ($I_d$ vs $V_{ds}$)
-![Id-Vds Curves](plots/id_vds_curves.png)
+![Id-Vds Curves](plots/idvds.png)
 
 ### Body Effect Threshold Voltage Shift ($V_{bs}$ Modulation)
-![Body Effect Shifts](plots/body_effect_curves.png)
+![Body Effect Shifts](plots/bodyeffect.png)
 
 ---
 
